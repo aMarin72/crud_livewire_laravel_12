@@ -21,13 +21,20 @@ class Index extends Component
         // $this->products = Product::paginate(10);
     }
 
+    public function delete(Product $product)
+    {
+        $product->delete();
+        $this->redirectRoute('products.index', navigate: true);
+    }
+
     // Para la paginacion los elementos deben de estar en el metodo render, no usamos el método mount
     public function render()
     {
         return view('livewire.products.index', [
             // 'products' => Product::all(),
             // 'products' => Product::simplePaginate(10),
-            'products' => Product::paginate(10),
+            // 'products' => Product::paginate(10),
+            'products' => Product::latest()->paginate(10),
         ]);
     }
 }

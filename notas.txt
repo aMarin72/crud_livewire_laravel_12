@@ -13,4 +13,10 @@ git add .
 git commit -m  “Aquí el comentario”
 git push -u origin main
 
+Crear un componente:
+php artisan make:component Form/Input --view
 
+Los form object son unas clases que nos provee Livewire para extraer la lógica de los componentes.
+
+Creamos app\Livewire\Products\Update.php pero la vista no la vamos a utilizar.
+En el componente renderizamos la vista create.

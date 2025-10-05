@@ -37,7 +37,7 @@ Route::middleware(['auth'])->group(function () {
         ->name('two-factor.show');
 });
 
-// Los full pages component siempre van a utilizar el layout principal app.blade.php (resources\views\components\layouts\app.blade.php)
+// Los full pages components siempre van a utilizar el layout principal app.blade.php (resources\views\components\layouts\app.blade.php)
 Route::get('products', Index::class)->name('products.index');
 Route::get('products/create', Create::class)->name('products.create');
 Route::get('products/{product}/edit', Update::class)->name('products.edit');

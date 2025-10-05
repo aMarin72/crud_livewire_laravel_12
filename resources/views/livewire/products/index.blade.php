@@ -57,8 +57,8 @@
                         <td class="p-4">{{ Str::limit($product->description, 50) }}</td>
                         <td class="p-4">{{ $product->created_at->format('d/m/Y') }}</td>
                         <td class="p-4 flex items-center gap-2">
+                            <!-- alternate Button with Icon -->
                             <a href="{{ route('products.edit', $product) }}" wire:navigate>
-                                <!-- alternate Button with Icon -->
                                 <button type="button"
                                     class="inline-flex justify-center items-center gap-2 whitespace-nowrap rounded-radius bg-surface-alt border border-surface-alt dark:border-surface-dark-alt px-4 py-2 text-xs font-medium tracking-wide text-on-surface-strong transition hover:opacity-75 text-center focus-visible:outline  focus-visible:outline-offset-2 focus-visible:outline-surface-alt active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:bg-surface-dark-alt dark:text-on-surface-dark-strong dark:focus-visible:outline-surface-dark-alt">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -68,8 +68,8 @@
                                     </svg>
                                     Edit
                                 </button>
-                            </a>
                             <!-- danger Button with Icon -->
+                            </a>
                             <button wire:click='delete({{ $product }})' {{-- wire:confirm='Are you sure you want to delete this product?'  --}}
                                 wire:confirm.prompt="Are you sure?\n\nType DELETE to confirm|DELETE" type="button"
                                 class="inline-flex justify-center items-center gap-2 whitespace-nowrap rounded-radius bg-danger border border-danger dark:border-danger px-4 py-2 text-xs font-medium tracking-wide text-on-danger transition hover:opacity-75 text-center focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-danger active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:bg-danger dark:text-on-danger dark:focus-visible:outline-danger">
